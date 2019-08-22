@@ -1,0 +1,12 @@
+﻿<img src="assets/logo.png">
+
+<h1>List All Courses</h1>
+<ul>
+    <li *ngFor="let article of articles">
+        <small>Course Code: {{article._id.courseCode}}</small>
+        <br />
+        <small>Course Name: {{article._id.courseName}}</small>
+        <div>&nbsp;</div>
+    </li>
+</ul>
+

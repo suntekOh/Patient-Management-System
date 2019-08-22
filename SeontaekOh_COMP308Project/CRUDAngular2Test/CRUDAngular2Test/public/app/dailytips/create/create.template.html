@@ -1,0 +1,39 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<form (ngSubmit)="create()" angular-validator>
+    <img src="assets/logo.png">
+    <h1>Add Daily Tips</h1>
+
+    <div class="container">
+        <label>Patient</label>
+        <select name="select4patient" [(ngModel)]="article.patient" class="fields" required>
+            <option *ngFor="let c of patients" [ngValue]="c._id">{{c.fullName}}</option>
+        </select>
+    </div>
+    <div class="container">
+        <label>Tips</label>
+
+        <!--<textarea [(ngModel)]="article.tips" name="tips" class="fields" rows="4" cols="50" required></textarea>-->
+
+        <div>
+            <input type="text" class="fields4textarea" [(ngModel)]="article.tips"
+                   name="tips" placeholder="tips" required>
+        </div>
+    </div>
+    <div class="container">
+        <label>URL for video</label>
+
+        <input type="text" class="fields" [(ngModel)]="article.url4video"
+               name="url4video" placeholder="url4video" size="50" />
+
+    </div>
+    <div class="container">
+        <button type="submit">Create</button>
+    </div>
+
+    <strong id="error">{{errorMessage}}</strong>
+
+</form>
+

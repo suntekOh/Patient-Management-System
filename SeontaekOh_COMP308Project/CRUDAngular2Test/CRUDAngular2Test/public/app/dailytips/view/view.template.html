@@ -1,0 +1,28 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<div class="outer_container">
+    <img src="assets/logo.png">
+    <h1>View Tips</h1>
+    <section *ngIf="article && article.creator">
+        <div *ngIf="allowEdit">
+            <a [routerLink]="['/dailytips', article._id, 'edit']">edit</a>
+            <button (click)="delete()">delete</button>
+        </div>
+        <small>
+            <em>
+                Advised on {{article.created}} by {{article.creator.fullName}}
+            </em>
+        </small>
+        <p>patient: {{article.patient.fullName}}</p>
+        <p>tips: {{article.tips}}</p>
+        <p>url for video: {{article.url4video}}</p>
+        <div *ngIf="article.url4video">
+            <video controls #myVideo>
+                <source src="{{article.url4video}}" type="video/mp4" />
+                Browser not supported
+            </video>
+        </div>
+    </section>
+</div>

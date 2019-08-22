@@ -1,0 +1,27 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+<div class="outer_container">
+    <img src="assets/logo.png">
+    <h1>Main Menu</h1>
+    <div *ngIf="user">
+        <h2>Hello {{user.firstName}}</h2>
+        <a href="/api/auth/signout">Signout</a>
+        <ul>
+            <li><a [routerLink]="['/vitalsigns']">List vital signs</a></li>
+            <li><a [routerLink]="['/vitalsigns/create']">Add vital signs</a></li>
+            <li><a [routerLink]="['/emergencyalert']">List emergency alert</a></li>
+            <li><a [routerLink]="['/emergencyalert/create']">Request emergency alert</a></li>
+            <li><a [routerLink]="['/dailytips']">List daily tips</a></li>
+            <li *ngIf="user.sort==='N'">
+                <a [routerLink]="['/dailytips/create']">Add daily tips</a>
+            </li>
+            <li><a [routerLink]="['/ml4hepatitis/create']">Predict Hepatitis</a></li>
+        </ul>
+    </div>
+    <div *ngIf="!user">
+        <a [routerLink]="['/authentication/signup']">Signup</a>
+        <a [routerLink]="['/authentication/signin']">Signin</a>
+    </div>
+</div>
+

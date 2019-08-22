@@ -1,0 +1,20 @@
+﻿<img src="assets/logo.png">
+
+<section *ngIf="article && article.taker">
+    <div *ngIf="allowEdit">
+        <a [routerLink]="['/articles', article._id, 'edit']">edit</a>
+        <button (click)="delete()">delete</button>
+    </div>
+    <small>
+        <em>
+            Measured on {{article.measuredDate}} by {{article.taker.fullName}}
+        </em>
+    </small>
+    <p>temperature: {{article.temperature}}</p>
+    <p>heartRate: {{article.heartRate}}</p>
+    <p>bloodPressure: {{article.bloodPressure}}</p>
+    <p>respiratoryRate: {{article.respiratoryRate}}</p>
+    <p>weight: {{article.weight}}</p>
+
+
+</section>

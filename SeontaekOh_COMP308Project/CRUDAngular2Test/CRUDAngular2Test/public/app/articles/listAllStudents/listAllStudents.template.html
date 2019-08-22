@@ -1,0 +1,11 @@
+﻿<img src="assets/logo.png">
+
+<h1>List All Students</h1>
+<ul>
+    <li *ngFor="let student of students">
+        <small>Student Number: {{student.studentNumber}}</small>
+        <br />
+        <small>Full name: {{student.fullName}}</small>
+        <div>&nbsp;</div>
+    </li>
+</ul>

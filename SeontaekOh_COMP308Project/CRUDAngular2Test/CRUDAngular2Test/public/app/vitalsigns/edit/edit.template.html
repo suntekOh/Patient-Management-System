@@ -1,0 +1,62 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+
+<form (ngSubmit)="update()" angular-validator>
+    <img src="assets/logo.png">
+    <h1>Edit Vital Signs</h1>
+
+    <div *ngIf="article.patient" class="container">
+        patient: {{article.patient.fullName}}
+    </div>
+
+
+    <div class="container">
+        <label for="title">temperature</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.temperature"
+                   name="temperature" placeholder="temperature" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">heartRate</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.heartRate"
+                   name="heartRate" placeholder="heartRate" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">bloodPressure</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.bloodPressure"
+                   name="bloodPressure" placeholder="bloodPressure" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">respiratoryRate</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.respiratoryRate"
+                   name="respiratoryRate" placeholder="respiratoryRate" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">weight</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.weight"
+                   name="weight" placeholder="weight" required>
+        </div>
+    </div>
+
+    <div class="container">
+        <label for="title">measuredDate</label>
+        <div>
+            <input type="date" class="fields" [(ngModel)]="article.measuredDate"
+                   name="measuredDate" required>
+        </div>
+    </div>
+    <div class="container">
+        <button type="submit">Edit</button>
+    </div>
+    <strong>{{errorMessage}}</strong>
+</form>

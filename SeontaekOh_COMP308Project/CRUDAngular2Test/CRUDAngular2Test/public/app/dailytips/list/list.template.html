@@ -1,0 +1,29 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+
+<div class="outer_container">
+    <img src="assets/logo.png">
+    <h1>List Daily Tips</h1>
+    <div class="container">
+        <ul>
+            <li *ngFor="let article of articles">
+                <a [routerLink]="['/dailytips', article._id]">
+                    Advised On {{article.created}} by {{article.creator.fullName}}
+                </a>
+                <br />
+                <small>patient: {{article.patient.fullName}}</small>
+                <br />
+                <small>tips: {{article.tips}}</small>
+                <br />
+                <small>url for video: {{article.url4video}}</small>
+                <div>&nbsp;</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--<div *ngIf="articles && articles.length === 0">
+    No Daily Tips yet, why don't you <a [routerLink]="['/dailytips/create']">add one</a>?
+</div>-->
+

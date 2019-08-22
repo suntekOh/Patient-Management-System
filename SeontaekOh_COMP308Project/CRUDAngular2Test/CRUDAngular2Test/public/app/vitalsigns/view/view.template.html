@@ -1,0 +1,30 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+
+<div class="outer_container">
+    <img src="assets/logo.png">
+
+    <h1>View Vital Signs</h1>
+
+    <section *ngIf="article && article.taker">
+        <div *ngIf="allowEdit">
+            <a [routerLink]="['/vitalsigns', article._id, 'edit']">edit</a>
+            <button (click)="delete()">delete</button>
+        </div>
+        <small>
+            <em>
+                Measured on {{article.measuredDate}} by {{article.taker.fullName}}
+            </em>
+        </small>
+        <p>patient: {{article.patient.fullName}}</p>
+        <p>temperature: {{article.temperature}}</p>
+        <p>heartRate: {{article.heartRate}}</p>
+        <p>bloodPressure: {{article.bloodPressure}}</p>
+        <p>respiratoryRate: {{article.respiratoryRate}}</p>
+        <p>weight: {{article.weight}}</p>
+
+
+    </section>
+</div>

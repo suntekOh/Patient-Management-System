@@ -1,0 +1,54 @@
+﻿
+<h1>Add Course</h1>
+<form (ngSubmit)="create()" novalidate>
+    <img src="assets/logo.png">
+
+    <div>
+        <label for="title">temperature</label>
+        <div>
+            <input type="text" [(ngModel)]="article.temperature"
+                   name="temperature" placeholder="temperature" required>
+        </div>
+    </div>
+    <div>
+        <label for="title">heartRate</label>
+        <div>
+            <input type="text" [(ngModel)]="article.heartRate"
+                   name="heartRate" placeholder="heartRate" required>
+        </div>
+    </div>
+    <div>
+        <label for="title">bloodPressure</label>
+        <div>
+            <input type="text" [(ngModel)]="article.bloodPressure"
+                   name="bloodPressure" placeholder="bloodPressure" required>
+        </div>
+    </div>
+    <div>
+        <label for="title">respiratoryRate</label>
+        <div>
+            <input type="text" [(ngModel)]="article.respiratoryRate"
+                   name="respiratoryRate" placeholder="respiratoryRate" required>
+        </div>
+    </div>
+    <div>
+        <label for="title">weight</label>
+        <div>
+            <input type="text" [(ngModel)]="article.weight"
+                   name="weight" placeholder="weight" required>
+        </div>
+    </div>
+
+    <div>
+        <label for="title">measuredDate</label>
+        <div>
+            <input type="date" [(ngModel)]="article.measuredDate"
+                   name="measuredDate" placeholder="yyyy-MM-dd" required>
+        </div>
+    </div>
+
+    <div>
+        <input type="submit">
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>

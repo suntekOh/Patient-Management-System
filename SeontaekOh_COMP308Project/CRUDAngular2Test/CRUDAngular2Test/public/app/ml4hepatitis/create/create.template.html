@@ -1,0 +1,154 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<form (ngSubmit)="create()" angular-validator>
+    <img src="assets/logo.png">
+    <h1>Predict whether to die or not according to hepatitis symptoms</h1>
+    <div class="container">
+        <label>
+            <b>age</b>
+        </label>
+        <input type="text" class="fields" name="age" [(ngModel)]="article.age" required/>
+    </div>
+
+    <div class="container">
+        <label><b>sex</b></label>
+        <select name="select4sex" class="fields" [(ngModel)]="article.sex" required>
+            <option value="1">Male</option> <!-- interpolation -->
+            <option value="2">Female</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>steroid</b></label>
+        <select name="select4steroid" class="fields" [(ngModel)]="article.steroid" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>antivirals</b></label>
+        <select name="select4antivirals" class="fields" [(ngModel)]="article.antivirals" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>fatigue</b></label>
+        <select name="select4fatigue" class="fields" [(ngModel)]="article.fatigue" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>malaise</b></label>
+        <select name="select4malaise" class="fields" [(ngModel)]="article.malaise" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>anorexia</b></label>
+        <select name="select4anorexia" class="fields" [(ngModel)]="article.anorexia" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>liver_big</b></label>
+        <select name="select4liver_big" class="fields" [(ngModel)]="article.liver_big" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>liver_firm</b></label>
+        <select name="select4liver_firm" class="fields" [(ngModel)]="article.liver_firm" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>spleen_palpable</b></label>
+        <select name="select4spleen_palpable" class="fields" [(ngModel)]="article.spleen_palpable" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>spiders</b></label>
+        <select name="select4spiders" class="fields" [(ngModel)]="article.spiders" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>ascites</b></label>
+        <select name="select4ascites" class="fields" [(ngModel)]="article.ascites" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <label><b>varices</b></label>
+        <select name="select4varices" class="fields" [(ngModel)]="article.varices" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+
+    <div class="container">
+        <label>
+            <b>bilurubin</b>
+        </label>
+        <input type="text" class="fields" name="bilurubin" [(ngModel)]="article.bilurubin" required/>
+    </div>
+    <div class="container">
+        <label>
+            <b>alk_phosphate</b>
+        </label>
+        <input type="text" class="fields" name="alk_phosphate" [(ngModel)]="article.alk_phosphate" required/>
+    </div>
+    <div class="container">
+        <label>
+            <b>sgot</b>
+        </label>
+        <input type="text" class="fields" name="sgot" [(ngModel)]="article.sgot" required/>
+    </div>
+    <div class="container">
+        <label>
+            <b>albumin</b>
+        </label>
+        <input type="text" class="fields" name="albumin" [(ngModel)]="article.albumin" required/>
+    </div>
+    <div class="container">
+        <label>
+            <b>protime</b>
+        </label>
+        <input type="text" class="fields" name="protime" [(ngModel)]="article.protime" required/>
+    </div>
+
+    <div class="container">
+        <label><b>histology</b></label>
+        <select name="select4histology" class="fields" [(ngModel)]="article.histology" required>
+            <option value="1">No</option> <!-- interpolation -->
+            <option value="2">Yes</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <button type="submit">Predict</button>
+    </div>
+</form>

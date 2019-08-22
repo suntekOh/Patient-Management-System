@@ -1,0 +1,26 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+
+<div class="outer_container">
+
+    <img src="assets/logo.png">
+    <h1>View Emergency Alert</h1>
+
+    <section *ngIf="article">
+        <div *ngIf="allowEdit">
+            <a [routerLink]="['/emergencyalert', article._id, 'edit']">respond</a>
+            <button (click)="delete()">delete</button>
+        </div>
+        <small>
+            <em>
+                Requested on {{article.created}} by {{article.patient.fullName}}
+            </em>
+        </small>
+        <p>description: {{article.description}}</p>
+        <p *ngIf="article.state === 'S'">Responder:{{article.responder.fullName}}</p>
+        <p *ngIf="article.state === 'R'"><font color="red">Not yet responded</font></p>
+        <p *ngIf="article.state === 'S'">Solved</p>
+    </section>
+</div>

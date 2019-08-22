@@ -1,0 +1,33 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<form (ngSubmit)="update()" angular-validator>
+    <img src="assets/logo.png">
+    <h1>Edit Tips</h1>
+    <div class="container">
+        <section *ngIf="article.patient">
+            <p>patient: {{article.patient.fullName}}</p>
+        </section>
+    </div>
+
+    <div class="container">
+        <label for="title">Tips&nbsp;</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.tips"
+                   name="tips" placeholder="tips" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">url for video&nbsp;</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.url4video"
+                   name="url4video" placeholder="url4video" size="50">
+        </div>
+    </div>
+
+    <div class="container">
+        <button type="submit">Edit Tips</button>
+    </div>
+    <strong>{{errorMessage}}</strong>
+</form>

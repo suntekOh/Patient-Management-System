@@ -1,0 +1,64 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<form (ngSubmit)="create()" angular-validator>
+    <img src="assets/logo.png">
+    <h1>Add Vital Signs</h1>
+    <div class="container">
+        <label>Patient:&nbsp;</label>
+        <div>
+            <select name="select4patient" class="fields" [(ngModel)]="article.patient" required>
+                <option *ngFor="let c of patients" [ngValue]="c._id">{{c.fullName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">temperature:&nbsp;</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.temperature"
+                   name="temperature" placeholder="temperature" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">heartRate:&nbsp; </label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.heartRate"
+                   name="heartRate" placeholder="heartRate" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">bloodPressure:&nbsp; </label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.bloodPressure"
+                   name="bloodPressure" placeholder="bloodPressure" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">respiratoryRate:&nbsp; </label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.respiratoryRate"
+                   name="respiratoryRate" placeholder="respiratoryRate" required>
+        </div>
+    </div>
+    <div class="container">
+        <label for="title">weight:&nbsp; </label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.weight"
+                   name="weight" placeholder="weight" required>
+        </div>
+    </div>
+
+    <div class="container">
+        <label for="title">measuredDate:&nbsp; </label>
+        <div>
+            <input type="date" class="fields" [(ngModel)]="article.measuredDate"
+                   name="measuredDate" placeholder="yyyy-MM-dd" required>
+        </div>
+    </div>
+
+    <div class="container">
+        <button type="submit">Create</button>
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>

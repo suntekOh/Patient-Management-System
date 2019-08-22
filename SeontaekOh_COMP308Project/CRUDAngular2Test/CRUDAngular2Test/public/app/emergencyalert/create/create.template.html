@@ -1,0 +1,19 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<form (ngSubmit)="create()" angular-validator>
+    <img src="assets/logo.png">
+    <h1>Request Emergency Alert</h1>
+    <div class="container">
+        <label for="title">description:&nbsp;</label>
+        <div>
+            <input type="text" class="fields" [(ngModel)]="article.description"
+                   name="description" placeholder="description" required>
+        </div>
+    </div>
+    <div class="container">
+        <button type="submit">Create</button>
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>

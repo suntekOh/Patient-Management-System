@@ -1,0 +1,30 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<div class="outer_container">
+
+
+    <img src="assets/logo.png">
+
+    <h1>List Emergency Alert</h1>
+
+    <ul>
+        <li *ngFor="let article of articles">
+            <a [routerLink]="['/emergencyalert', article._id]">
+                Requested On {{article.created}} by {{article.patient.fullName}}
+            </a>
+            <br />
+            <small>description: {{article.description}}</small>
+            <br />
+            <small *ngIf="article.state === 'S'">Responder:{{article.responder.fullName}}<br /></small>
+
+            <small *ngIf="article.state === 'R'"><font color="red">Not yet responded</font></small>
+            <small *ngIf="article.state === 'S'">Solved</small>
+            <div>&nbsp;</div>
+        </li>
+    </ul>
+    <div *ngIf="articles && articles.length === 0">
+        <a [routerLink]="['/emergencyalert/create']">request one</a>?
+    </div>
+</div>

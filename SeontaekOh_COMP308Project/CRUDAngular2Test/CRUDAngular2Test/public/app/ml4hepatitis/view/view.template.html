@@ -1,0 +1,16 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="../../../css/defaultstyle.css" />
+</head>
+
+<body>
+    <div class="outer_container">
+        <img src="assets/logo.png">
+        <h1>Predict</h1>
+        <div *ngIf="article">
+            <h2>According the Machine Learning </h2>
+            Probability for becoming dead is: {{article.probability4die}}
+            <br />
+            Probability for staying alive is: {{article.probability4live}}
+        </div>
+    </div>
+</body>

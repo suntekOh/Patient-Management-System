@@ -1,0 +1,24 @@
+﻿<img src="assets/logo.png">
+
+<h1>List vital signs</h1>
+<ul>
+    <li *ngFor="let article of articles">
+        <a [routerLink]="['/articles', article._id]">{{article.measuredDate}}</a>
+        <br />
+        <small>{{article.measuredDate}}/{{article.taker.fullName}}</small>
+        <br />
+        <small>temperature: {{article.temperature}}</small>
+        <br />
+        <small>heartRate: {{article.heartRate}}</small>
+        <br />
+        <small>bloodPressure: {{article.bloodPressure}}</small>
+        <br />
+        <small>respiratoryRate: {{article.respiratoryRate}}</small>
+        <br />
+        <small>weight: {{article.weight}}</small>
+        <div>&nbsp;</div>
+    </li>
+</ul>
+<div *ngIf="articles && articles.length === 0">
+    No Courses yet, why don't you <a [routerLink]="['/articles/create']">add one</a>?
+</div>
